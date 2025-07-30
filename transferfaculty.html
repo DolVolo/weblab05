@@ -547,7 +547,7 @@
                     required
                     pattern="^(0?[1-9]|1[0-2]|มกราคม|กุมภาพันธ์|มีนาคม|เมษายน|พฤษภาคม|มิถุนายน|กรกฎาคม|สิงหาคม|กันยายน|ตุลาคม|พฤศจิกายน|ธันวาคม)$"
                     title="กรุณากรอกหมายเลขเดือน (1-12) หรือชื่อเดือนเป็นภาษาไทย เช่น มกราคม"
-                    placeholder="1 หรือ มกราคม"
+                    placeholder="เลขเดือน/ชื่อเดือน"
                     min="1" max="12">
                     <span>พ.ศ.</span>
                     <input type="number" class="border-b border-black w-20 text-center"  
@@ -563,7 +563,7 @@
             <div class="mb-4">
                 <p class="mb-2"><strong>เรื่อง</strong> ขอโอนย้ายสาขาวิชาต่างคณะ</p><div class="flex items-center gap-2">
                     <span><strong>เรียน</strong> คณบดีคณะ (คณะใหม่)</span>
-                    <input type="text" class="border-b border-black w-72" 
+                    <input type="text" class="border-b border-black w-80" 
                            placeholder="ระบุชื่อคณะ" 
                            required 
                            pattern="^[ก-๙a-zA-Z\s]{2,50}$" 
@@ -587,7 +587,7 @@
                     </div>
                     <div class="flex items-center gap-2">
                         <span>ชื่อ-นามสกุล</span>
-                        <input type="text" class="border-b border-black w-72" 
+                        <input type="text" class="border-b border-black flex-1" 
                                required
                                pattern="\S+\s+\S+.*"
                                title="กรุณากรอกชื่อและนามสกุล เช่น สมชาย ใจดี"
@@ -595,45 +595,51 @@
                     </div>
                 </div>
 
-                <div class="no-gap-desktop flex flex-col md:flex-row gap-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                     <div class="flex items-center gap-2">
                         <span>รหัสนักศึกษา</span>
-                        <input type="text" class="border-b border-black w-32" 
+                        <input type="text" class="border-b border-black flex-1" 
                         pattern="^6[0-9]{9}$" 
                         required 
                         title="กรุณากรอกรหัสนักศึกษาใหม่ นำหน้าด้วย6 และตามด้วยตัวเลข 9 หลัก"
                         placeholder="6xxxxxxxxx">
-                        
                     </div>
-                    <div class="flex items-center gap-2">
-                        <span>โทรศัพท์มือถือ</span>
-                        <input type="tel" class="border-b border-black w-32" 
-                        required 
-                        pattern="^08[0-9]{8}$" 
-                        title="กรุณากรอกเบอร์โทรศัพท์มือถือ 10 หลัก เริ่มต้นด้วย 08"
-                        placeholder="08xxxxxxxx">
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <span>ระบบ</span>
-                        <input type="text" class="border-b border-black w-24"
-                               required 
-                               pattern="^[ก-๙a-zA-Z0-9\s]{1,20}$"
-                               title="กรุณากรอกระบบการศึกษา เช่น ปกติ, สมทบ"
-                               placeholder="เช่น ปกติ">
+                    <div class="flex items-center gap-4">
+                        <div class="flex items-center gap-2">
+                            <span>โทรศัพท์มือถือ</span>
+                            <input type="tel" class="border-b border-black flex-1" 
+                            required 
+                            pattern="^08[0-9]{8}$" 
+                            title="กรุณากรอกเบอร์โทรศัพท์มือถือ 10 หลัก เริ่มต้นด้วย 08"
+                            placeholder="08xxxxxxxx">
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span>ระบบ</span>
+                            <input type="text" class="border-b border-black w-24"
+                                   required 
+                                   pattern="^[ก-๙a-zA-Z0-9\s]{1,20}$"
+                                   title="กรุณากรอกระบบการศึกษา เช่น ปกติ, สมทบ"
+                                   placeholder="เช่น ปกติ">
+                        </div>
                     </div>
                 </div>
 
                 <!-- Program Type -->
-                <div class="mb-4 flex flex-col md:flex-row md:items-center md:gap-4">
-                    <span class="mr-4">หลักสูตร</span>
-                    <div class="flex flex-col md:flex-row md:items-center md:gap-8 w-full">
-                        <div class="checkbox-group">
-                            <label><input type="radio" name="program" value="4-5years" required> 4 – 5 ปี</label>
-                            <label><input type="radio" name="program" value="4years-transfer" required> 4 ปีเทียบเข้าเรียน (2ปี)</label>
+                <div class="mb-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div class="flex items-center gap-2">
+                            <span>หลักสูตร</span>
+                            <div class="flex items-center gap-2">
+                                <label><input type="radio" name="program" value="4-5years" required> 4 – 5 ปี</label>
+                                <label><input type="radio" name="program" value="4years-transfer" required> 4 ปีเทียบเข้าเรียน (2ปี)</label>
+                            </div>
                         </div>
-                        <div class="checkbox-group md:ml-8">
-                            <label><input type="radio" name="program-type" value="regular" required> ภาคปกติ</label>
-                            <label><input type="radio" name="program-type" value="continuing" required> ภาคสมทบ</label>
+                        <div class="flex items-center gap-2">
+                            <span>ประเภท</span>
+                            <div class="flex items-center gap-2">
+                                <label><input type="radio" name="program-type" value="regular" required> ภาคปกติ</label>
+                                <label><input type="radio" name="program-type" value="continuing" required> ภาคสมทบ</label>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -659,7 +665,7 @@
                 <div class="mb-4">
                     <div class="flex items-center gap-2 mb-2">
                         <span>มีความประสงค์จะขอโอนย้ายไปสาขาวิชา</span>
-                        <input type="text" class="border-b border-black w-48" 
+                        <input type="text" class="border-b border-black w-80" 
                         required
                         pattern="^[ก-๙a-zA-Z\s]{2,50}$"
                         title="กรุณากรอกชื่อสาขาวิชา (ภาษาไทยหรือภาษาอังกฤษ 2-50 ตัวอักษร)"
@@ -714,7 +720,7 @@
                     required
                     pattern="^(0?[1-9]|1[0-2]|มกราคม|กุมภาพันธ์|มีนาคม|เมษายน|พฤษภาคม|มิถุนายน|กรกฎาคม|สิงหาคม|กันยายน|ตุลาคม|พฤศจิกายน|ธันวาคม)$"
                     title="กรุณากรอกหมายเลขเดือน (1-12) หรือชื่อเดือนเป็นภาษาไทย เช่น มกราคม"
-                    placeholder="1 หรือ มกราคม"
+                    placeholder="เลขเดือน/ชื่อเดือน"
                     min="1" max="12">                  
                     <span>/</span>
                     <input type="number" class="border-b border-black w-20 text-center"  
@@ -788,7 +794,7 @@
                     required
                     pattern="^(0?[1-9]|1[0-2]|มกราคม|กุมภาพันธ์|มีนาคม|เมษายน|พฤษภาคม|มิถุนายน|กรกฎาคม|สิงหาคม|กันยายน|ตุลาคม|พฤศจิกายน|ธันวาคม)$"
                     title="กรุณากรอกหมายเลขเดือน (1-12) หรือชื่อเดือนเป็นภาษาไทย เช่น มกราคม"
-                    placeholder="1 หรือ มกราคม"
+                    placeholder="เลขเดือน/ชื่อเดือน"
                     min="1" max="12">                    
                     <span>/</span>
                     <input type="number" class="border-b border-black w-20 text-center"  
@@ -827,7 +833,7 @@
                     required
                     pattern="^(0?[1-9]|1[0-2]|มกราคม|กุมภาพันธ์|มีนาคม|เมษายน|พฤษภาคม|มิถุนายน|กรกฎาคม|สิงหาคม|กันยายน|ตุลาคม|พฤศจิกายน|ธันวาคม)$"
                     title="กรุณากรอกหมายเลขเดือน (1-12) หรือชื่อเดือนเป็นภาษาไทย เช่น มกราคม"
-                    placeholder="1 หรือ มกราคม"
+                    placeholder="เลขเดือน/ชื่อเดือน"
                     min="1" max="12">
                     <span>/</span>
                     <input type="number" class="border-b border-black w-20 text-center"  
@@ -870,7 +876,7 @@
                     required
                     pattern="^(0?[1-9]|1[0-2]|มกราคม|กุมภาพันธ์|มีนาคม|เมษายน|พฤษภาคม|มิถุนายน|กรกฎาคม|สิงหาคม|กันยายน|ตุลาคม|พฤศจิกายน|ธันวาคม)$"
                     title="กรุณากรอกหมายเลขเดือน (1-12) หรือชื่อเดือนเป็นภาษาไทย เช่น มกราคม"
-                    placeholder="1 หรือ มกราคม"
+                    placeholder="เลขเดือน/ชื่อเดือน"
                     min="1" max="12">
                                 <span>/</span>
                     <input type="number" class="border-b border-black w-20 text-center"  
@@ -913,7 +919,7 @@
                     required
                     pattern="^(0?[1-9]|1[0-2]|มกราคม|กุมภาพันธ์|มีนาคม|เมษายน|พฤษภาคม|มิถุนายน|กรกฎาคม|สิงหาคม|กันยายน|ตุลาคม|พฤศจิกายน|ธันวาคม)$"
                     title="กรุณากรอกหมายเลขเดือน (1-12) หรือชื่อเดือนเป็นภาษาไทย เช่น มกราคม"
-                    placeholder="1 หรือ มกราคม"
+                    placeholder="เลขเดือน/ชื่อเดือน"
                     min="1" max="12">                                
                     <span>/</span>
                     <input type="number" class="border-b border-black w-20 text-center"  
@@ -964,7 +970,7 @@
                     required
                     pattern="^(0?[1-9]|1[0-2]|มกราคม|กุมภาพันธ์|มีนาคม|เมษายน|พฤษภาคม|มิถุนายน|กรกฎาคม|สิงหาคม|กันยายน|ตุลาคม|พฤศจิกายน|ธันวาคม)$"
                     title="กรุณากรอกหมายเลขเดือน (1-12) หรือชื่อเดือนเป็นภาษาไทย เช่น มกราคม"
-                    placeholder="1 หรือ มกราคม"
+                    placeholder="เลขเดือน/ชื่อเดือน"
                     min="1" max="12">                                
                     <span>/</span>
                     <input type="number" class="border-b border-black w-20 text-center"  
@@ -1013,7 +1019,7 @@
                     required
                     pattern="^(0?[1-9]|1[0-2]|มกราคม|กุมภาพันธ์|มีนาคม|เมษายน|พฤษภาคม|มิถุนายน|กรกฎาคม|สิงหาคม|กันยายน|ตุลาคม|พฤศจิกายน|ธันวาคม)$"
                     title="กรุณากรอกหมายเลขเดือน (1-12) หรือชื่อเดือนเป็นภาษาไทย เช่น มกราคม"
-                    placeholder="1 หรือ มกราคม"
+                    placeholder="เลขเดือน/ชื่อเดือน"
                     min="1" max="12">                                
                     <span>/</span>
                     <input type="number" class="border-b border-black w-20 text-center"  
@@ -1061,7 +1067,7 @@
                     required
                     pattern="^(0?[1-9]|1[0-2]|มกราคม|กุมภาพันธ์|มีนาคม|เมษายน|พฤษภาคม|มิถุนายน|กรกฎาคม|สิงหาคม|กันยายน|ตุลาคม|พฤศจิกายน|ธันวาคม)$"
                     title="กรุณากรอกหมายเลขเดือน (1-12) หรือชื่อเดือนเป็นภาษาไทย เช่น มกราคม"
-                    placeholder="1 หรือ มกราคม"
+                    placeholder="เลขเดือน/ชื่อเดือน"
                     min="1" max="12">                                
                     <span>/</span>
                     <input type="number" class="border-b border-black w-20 text-center"  
@@ -1116,7 +1122,7 @@
                     required
                     pattern="^(0?[1-9]|1[0-2]|มกราคม|กุมภาพันธ์|มีนาคม|เมษายน|พฤษภาคม|มิถุนายน|กรกฎาคม|สิงหาคม|กันยายน|ตุลาคม|พฤศจิกายน|ธันวาคม)$"
                     title="กรุณากรอกหมายเลขเดือน (1-12) หรือชื่อเดือนเป็นภาษาไทย เช่น มกราคม"
-                    placeholder="1 หรือ มกราคม"
+                    placeholder="เลขเดือน/ชื่อเดือน"
                     min="1" max="12">                                
                     <span>/</span>
                     <input type="number" class="border-b border-black w-20 text-center"  
@@ -1159,7 +1165,7 @@
                     required
                     pattern="^(0?[1-9]|1[0-2]|มกราคม|กุมภาพันธ์|มีนาคม|เมษายน|พฤษภาคม|มิถุนายน|กรกฎาคม|สิงหาคม|กันยายน|ตุลาคม|พฤศจิกายน|ธันวาคม)$"
                     title="กรุณากรอกหมายเลขเดือน (1-12) หรือชื่อเดือนเป็นภาษาไทย เช่น มกราคม"
-                    placeholder="1 หรือ มกราคม"
+                    placeholder="เลขเดือน/ชื่อเดือน"
                     min="1" max="12">                                
                     <span>/</span>
                     <input type="number" class="border-b border-black w-20 text-center"  
