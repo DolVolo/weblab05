@@ -6,7 +6,6 @@
     <title>คำร้องขอโอนย้ายสาขาวิชาต่างคณะ</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
         // Ensure Lucide is available globally
         window.lucide = window.lucide || {};
@@ -16,16 +15,10 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         
         :root {
-            --primary-color: #3b82f6;
-            --primary-dark: #1d4ed8;
-            --secondary-color: #10b981;
-            --accent-color: #f59e0b;
-            --purple-color: #8b5cf6;
-            --pink-color: #ec4899;
-            --indigo-color: #6366f1;
-            --teal-color: #14b8a6;
-            --orange-color: #f97316;
-            --rose-color: #f43f5e;
+            --primary-color: #1e40af;
+            --primary-dark: #1e3a8a;
+            --secondary-color: #059669;
+            --accent-color: #dc2626;
             --neutral-50: #f8fafc;
             --neutral-100: #f1f5f9;
             --neutral-200: #e2e8f0;
@@ -36,16 +29,12 @@
             --neutral-700: #334155;
             --neutral-800: #1e293b;
             --neutral-900: #0f172a;
-            --gradient-primary: linear-gradient(135deg, #059669 0%, #10b981 100%); /* Green gradient */
-            --gradient-secondary: linear-gradient(135deg, #059669 0%, #10b981 100%); /* Green gradient */
-            --gradient-accent: linear-gradient(135deg, #059669 0%, #10b981 100%); /* Green gradient */
-            --gradient-rainbow: linear-gradient(135deg, #059669, #10b981); /* Green gradient */
+            --gradient-primary: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            --gradient-secondary: linear-gradient(135deg, #059669 0%, #10b981 100%);
             --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
             --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
             --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
             --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-            --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-            --shadow-colored: 0 20px 25px -5px rgba(59, 130, 246, 0.1), 0 8px 10px -6px rgba(59, 130, 246, 0.1);
         }
 
         * {
@@ -60,7 +49,7 @@
             overflow-x: hidden;
         }
 
-        /* Enhanced Animated Background */
+        /* Animated Background */
         body::before {
             content: '';
             position: fixed;
@@ -69,40 +58,18 @@
             width: 100%;
             height: 100%;
             background: 
-                radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(139, 92, 246, 0.06) 0%, transparent 50%),
-                radial-gradient(circle at 60% 70%, rgba(245, 158, 11, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 90% 10%, rgba(236, 72, 153, 0.05) 0%, transparent 50%);
+                radial-gradient(circle at 20% 80%, rgba(30, 64, 175, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(5, 150, 105, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(59, 130, 246, 0.03) 0%, transparent 50%);
             z-index: -1;
-            animation: backgroundShift 25s ease-in-out infinite;
-        }
-
-        body::after {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                linear-gradient(45deg, transparent 30%, rgba(59, 130, 246, 0.02) 50%, transparent 70%),
-                linear-gradient(-45deg, transparent 30%, rgba(16, 185, 129, 0.02) 50%, transparent 70%);
-            z-index: -1;
-            animation: backgroundWave 30s ease-in-out infinite;
+            animation: backgroundShift 20s ease-in-out infinite;
         }
 
         @keyframes backgroundShift {
-            0%, 100% { transform: translateX(0) translateY(0) rotate(0deg); }
-            25% { transform: translateX(-15px) translateY(-10px) rotate(1deg); }
-            50% { transform: translateX(15px) translateY(15px) rotate(-1deg); }
-            75% { transform: translateX(-8px) translateY(8px) rotate(0.5deg); }
-        }
-
-        @keyframes backgroundWave {
-            0%, 100% { transform: translateX(0) translateY(0) scale(1); }
-            33% { transform: translateX(10px) translateY(-5px) scale(1.02); }
-            66% { transform: translateX(-10px) translateY(10px) scale(0.98); }
+            0%, 100% { transform: translateX(0) translateY(0); }
+            25% { transform: translateX(-10px) translateY(-10px); }
+            50% { transform: translateX(10px) translateY(10px); }
+            75% { transform: translateX(-5px) translateY(5px); }
         }
 
         /* Enhanced Form Sections */
@@ -117,7 +84,6 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
-            animation: slideInUp 0.6s ease-out;
         }
 
         .form-section::before {
@@ -132,31 +98,14 @@
             transition: transform 0.3s ease;
         }
 
-        .form-section::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 60px;
-            height: 60px;
-            background: radial-gradient(circle, rgba(30, 64, 175, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-            transform: scale(0);
-            transition: transform 0.3s ease;
-        }
-
         .form-section:hover {
-            transform: translateY(-4px) scale(1.01);
-            box-shadow: var(--shadow-xl);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
             border-color: var(--primary-color);
         }
 
         .form-section:hover::before {
             transform: scaleX(1);
-        }
-
-        .form-section:hover::after {
-            transform: scale(1);
         }
 
         /* Enhanced Input Styles */
@@ -312,16 +261,19 @@
         }
 
         .bg-blue-500 {
-            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            background: var(--gradient-primary);
         }
 
         .bg-green-500 {
-            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            background: var(--gradient-secondary);
         }
 
         /* Enhanced Header */
         .text-center h1 {
-            color: #059669;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             font-weight: 700;
             letter-spacing: -0.025em;
             margin-bottom: 8px;
@@ -351,7 +303,7 @@
             transform: translateY(-50%);
             width: 4px;
             height: 20px;
-            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            background: var(--gradient-primary);
             border-radius: 2px;
         }
 
@@ -519,113 +471,6 @@
             transform: translateY(-4px);
             box-shadow: var(--shadow-xl);
         }
-
-        /* Floating Animation */
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .float-animation {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        /* Pulse Animation */
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
-        }
-
-        .pulse-animation {
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        /* Icon Spin Animation */
-        @keyframes iconSpin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .icon-spin:hover {
-            animation: iconSpin 1s linear;
-        }
-
-        /* Gradient Text Animation */
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .gradient-text {
-            color: #059669;
-            background: none;
-            -webkit-background-clip: unset;
-            -webkit-text-fill-color: unset;
-            background-clip: unset;
-            animation: none;
-        }
-
-        /* Enhanced Input Focus Effects */
-        .input-group {
-            position: relative;
-        }
-
-        .input-group::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: var(--gradient-primary);
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-        }
-
-        .input-group:focus-within::after {
-            width: 100%;
-        }
-
-        /* Progress Bar Animation */
-        .progress-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 3px;
-            background: var(--gradient-primary);
-            z-index: 9999;
-            transition: width 0.3s ease;
-        }
-
-        /* Notification Toast */
-        .toast {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--neutral-200);
-            border-radius: 12px;
-            padding: 16px 20px;
-            box-shadow: var(--shadow-lg);
-            transform: translateX(400px);
-            transition: transform 0.3s ease;
-            z-index: 10000;
-        }
-
-        .toast.show {
-            transform: translateX(0);
-        }
-
-        .toast.success {
-            border-left: 4px solid #10b981;
-        }
-
-        .toast.error {
-            border-left: 4px solid #ef4444;
-        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col bg-gray-50">
@@ -735,8 +580,8 @@
             <!-- Student Information -->
             <div class="form-section">
                 <h3 class="font-semibold mb-3 flex items-center gap-2">
-                    <i data-lucide="user" class="text-blue-600 icon-spin" size="20"></i>
-                    <span class="gradient-text">ข้อมูลนักศึกษา</span>
+                    <i data-lucide="user" class="text-blue-600" size="20"></i>
+                    ข้อมูลนักศึกษา
                 </h3>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
@@ -843,8 +688,8 @@
             <!-- Qualifications -->
             <div class="form-section">
                 <h3 class="font-semibold mb-3 flex items-center gap-2">
-                    <i data-lucide="check-circle" class="text-green-600 pulse-animation" size="20"></i>
-                    <span class="gradient-text">คุณสมบัติในการขอย้ายสาขาวิชา</span>
+                    <i data-lucide="check-circle" class="text-green-600" size="20"></i>
+                    คุณสมบัติในการขอย้ายสาขาวิชา
                 </h3>
                 <p class="mb-3 text-sm md:text-base">ทั้งนี้ ข้าพเจ้ามีคุณสมบัติครบถ้วนในการขอย้ายสาขาวิชา ดังนี้ คือ</p>
                 
@@ -930,10 +775,7 @@
                     
                     <!-- Section 2: Advisor Opinion -->
                     <div class="form-section">
-                    <p class="font-semibold flex items-center gap-2">
-                        <i data-lucide="user-check" class="text-blue-600" size="18"></i>
-                        (2) ความเห็นอาจารย์ที่ปรึกษา
-                    </p>
+                    <p class="font-semibold">(2) ความเห็นอาจารย์ที่ปรึกษา</p>
                     <textarea class="w-full h-20 border p-2 mt-2" 
                     placeholder="ระบุความเห็น"
                     required
@@ -981,10 +823,7 @@
 
                     <!-- Section 3: Program Committee Chair (Old) -->
                     <div class="form-section">
-                        <p class="font-semibold text-sm md:text-base flex items-center gap-2">
-                            <i data-lucide="users" class="text-green-600" size="18"></i>
-                            (3) ความเห็นประธานกรรมการบริหารหลักสูตร
-                        </p>
+                        <p class="font-semibold text-sm md:text-base">(3) ความเห็นประธานกรรมการบริหารหลักสูตร</p>
                         <textarea class="w-full h-24 border p-2 mt-2 text-sm md:text-base" placeholder="ระบุความเห็น" required></textarea>
                        <br>
                         <div class="text-center mt-4">
@@ -1024,10 +863,7 @@
 
                     <!-- Section 4: Dean Opinion (Old Faculty) -->
                     <div class="form-section">
-                        <p class="font-semibold flex items-center gap-2">
-                            <i data-lucide="graduation-cap" class="text-indigo-600" size="18"></i>
-                            (4) ความเห็นคณบดีคณะ
-                        </p>
+                        <p class="font-semibold">(4) ความเห็นคณบดีคณะ</p>
         
                         <textarea class="w-full h-16 border p-2 mt-2" placeholder="ระบุความเห็น" required></textarea>
                         <div class="checkbox-group mt-2">
@@ -1175,10 +1011,7 @@
                     
                     <!-- Section 5: Program Committee Chair (New) -->
                     <div class="form-section">
-                        <p class="font-semibold flex items-center gap-2">
-                            <i data-lucide="users" class="text-purple-600" size="18"></i>
-                            (5) ความเห็นประธานกรรมการบริหารหลักสูตร
-                        </p>
+                        <p class="font-semibold">(5) ความเห็นประธานกรรมการบริหารหลักสูตร</p>
                         <textarea class="w-full h-20 border p-2 mt-2" 
                         placeholder="ระบุความเห็น" 
                         required
@@ -1223,10 +1056,7 @@
 
                     <!-- Section 6: Dean Approval (New Faculty) -->
                     <div class="form-section">
-                        <p class="font-semibold flex items-center gap-2">
-                            <i data-lucide="graduation-cap" class="text-purple-600" size="18"></i>
-                            (6) ความเห็นคณบดีคณะ
-                        </p>
+                        <p class="font-semibold">(6) ความเห็นคณบดีคณะ</p>
                         
                         <textarea class="w-full h-16 border p-2 mt-2" placeholder="ระบุความเห็น" required></textarea>
                         <div class="checkbox-group mt-2">
@@ -1275,10 +1105,7 @@
 
                     <!-- Section 7: Finance -->
                     <div class="form-section">
-                        <p class="font-semibold flex items-center gap-2">
-                            <i data-lucide="dollar-sign" class="text-green-600" size="18"></i>
-                            (7) งานเงินรายได้ กองคลัง ชั้น 1 สำนักงานอธิการบดี
-                        </p>
+                        <p class="font-semibold">(7) งานเงินรายได้ กองคลัง ชั้น 1 สำนักงานอธิการบดี</p>
                         <p class="mt-2">ได้รับชำระเงินจำนวน 500 บาท เป็นที่เรียบร้อยแล้ว</p>
                         <div class="flex flex-wrap gap-2 mt-2">
                             <span class="text-sm md:text-base">และได้ออกใบเสร็จรับเงินเล่มที่</span>
@@ -1396,19 +1223,16 @@
             </div>
 
             <!-- Submit Buttons -->
-            <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mt-8 no-print">
-            <button type="submit" class="bg-blue-500 text-white px-4 sm:px-6 py-3 sm:py-2 rounded hover:bg-blue-600 flex items-center justify-center gap-2 hover-lift text-sm sm:text-base w-full sm:w-auto">
-            <i data-lucide="save" size="16"></i>
-            บันทึกข้อมูล
-            </button>
-            <button type="button" onclick="window.print()" class="bg-green-500 text-white px-4 sm:px-6 py-3 sm:py-2 rounded hover:bg-green-600 flex items-center justify-center gap-2 hover-lift text-sm sm:text-base w-full sm:w-auto">
-            <i data-lucide="printer" size="16"></i>
-            พิมพ์แบบฟอร์ม
-            </button>
-            <button type="reset" class="bg-gray-500 text-white px-4 sm:px-6 py-3 sm:py-2 rounded hover:bg-gray-600 flex items-center justify-center gap-2 hover-lift text-sm sm:text-base w-full sm:w-auto">
-            <i data-lucide="refresh-cw" size="16"></i>
-            ล้างข้อมูล
-            </button>
+            <div class="flex gap-4 justify-center mt-8 no-print">
+                <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600">
+                    บันทึกข้อมูล
+                </button>
+                <button type="button" onclick="window.print()" class="bg-green-500 text-white px-6 py-2 rounded hover:bg-green-600">
+                    พิมพ์แบบฟอร์ม
+                </button>
+                <button type="reset" class="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600">
+                    ล้างข้อมูล
+                </button>
             </div>
         </form>
         </div>
@@ -1527,8 +1351,32 @@
             });
         });
 
-        // Initialize Lucide icons
-        lucide.createIcons();
+        // Initialize Lucide icons with multiple attempts
+        function initializeLucideIcons() {
+            console.log('Attempting to initialize Lucide icons...');
+            
+            if (typeof lucide !== 'undefined' && lucide.createIcons) {
+                try {
+                    lucide.createIcons();
+                    console.log('Lucide icons initialized successfully!');
+                } catch (error) {
+                    console.error('Error initializing Lucide icons:', error);
+                }
+            } else {
+                console.warn('Lucide library not found or createIcons method missing');
+                // Fallback: try again after a short delay
+                setTimeout(initializeLucideIcons, 500);
+            }
+        }
+
+        // Try to initialize icons when DOM is loaded
+        document.addEventListener('DOMContentLoaded', initializeLucideIcons);
+
+        // Also try after page load as backup
+        window.addEventListener('load', initializeLucideIcons);
+
+        // Additional fallback: try after a delay
+        setTimeout(initializeLucideIcons, 1000);
     </script>
 </body>
 </html>
